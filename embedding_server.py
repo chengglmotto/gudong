@@ -45,7 +45,7 @@ class Embedding_Server():
             doc.page_content = doc.page_content.replace('\n',' ')
         return docs
 
-    def split_text(self,docs,chunk_size=100,chunk_over_lap=10):
+    def split_text(self,docs,chunk_size=500,chunk_over_lap=20):
         titles_dict = self.gain_titles()
         text_spliter = CharacterTextSplitter(separator='.', chunk_size=chunk_size, chunk_overlap=chunk_over_lap)
         chunks = []
